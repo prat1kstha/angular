@@ -34,7 +34,6 @@ function multiply(a, b) {
 // type Person = { name: string, age: number, isMale: boolean };
 var person3 = { name: 'Pratik', age: 25, isMale: true };
 var printPersonDetails = function (person) {
-    console.log(person);
+    console.log("Name: ".concat(person.name, ", Age: ").concat(person.age, ", Gender: ").concat(person.isMale ? "Male" : "Female", "\n"));
 };
 printPersonDetails(person3);
-// console.log(person3);

@@ -49,7 +49,8 @@ function multiply(a: number, b: number) {
 const person3: Person = { name: 'Pratik', age: 25, isMale: true };
 
 const printPersonDetails = function (person: Person) {
-    console.log(person);
+    console.log(`Name: ${person.name}, Age: ${person.age}, Gender: ${person.isMale ? "Male" : "Female"}
+`);
 }
 
 printPersonDetails(person3);

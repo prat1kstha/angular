@@ -1,31 +1,55 @@
-// Basic types
+console.log('Hello there!');
+// tsc .\index.ts
+// node .\index.js
+
+/* Basic Types */
 // const, let, var
-const personName: string = 'Bishnu';
-const age: number = 23;
+const personName: string = "Pratik";
+const age: number = 25;
 const isFemale: boolean = false;
 const nothingHere: undefined = undefined;
-const nothingHere1: null = null;
-const personNames: string[] = ['sdfs', 'dsfsf'];
+const nullHere: null = null;
+const personNames: string[] = [];
 
-// Dynamic and static
-let x: string = 'sdfsafda';
-x = 'sdfadf afsdsfsfs';
+// Dynamic and Static
+var x: string = "abcd";
+// x = 123; // Throws an error since variable x is a string
+console.log(typeof (personName));
 
+// Annotating types in an object
+const person: { name: string, age: number, isMale: boolean } = { name: 'Peter', age: 45, isMale: true };
+console.log(person);
+
+// Creating custom types
 type Person = { name: string, age: number, isMale: boolean };
-
-const person: Person = { name: 'Peter', age: 45, isMale: true };
+const person2: Person = { name: 'Peter', age: 45, isMale: true };
+console.log(person2);
 
 // Union types
 let nickName: string | Person;
-
-nickName = 'sdfsadfsd';
+nickName = 'asdf';
 nickName = person;
+// nickName = true; // Throws an error since variable nickName is of type string or Person
 
-// Functions
+console.log(nickName);
+
+
+/* Functions */
 const add = (a: number, b: number): number => a + b;
+console.log(add(10, 2));
 
-function multiply(a: number, b: number) : number {
+function multiply(a: number, b: number) {
     return a * b;
 }
 
+
 // Q1: Write TS function which takes Person object type as argument and print its details to console
+
+// type Person = { name: string, age: number, isMale: boolean };
+const person3: Person = { name: 'Pratik', age: 25, isMale: true };
+
+const printPersonDetails = function (person: Person) {
+    console.log(person);
+}
+
+printPersonDetails(person3);

@@ -33,6 +33,10 @@ nickName = person;
 
 console.log(nickName);
 
+/* Variable declaration for dynamic type */
+let z: any = 'abc';
+z = 123;
+
 
 /* Functions */
 const add = (a: number, b: number): number => a + b;

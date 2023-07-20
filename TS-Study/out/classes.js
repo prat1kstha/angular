@@ -37,3 +37,4 @@ dog.feed();
 // const cat = new Animal();
 // cat.isHuman = false;
 // console.log(cat.isHuman);
+//# sourceMappingURL=classes.js.map

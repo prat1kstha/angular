@@ -18,6 +18,6 @@ printPersonDetails(person3);
 ## Q2: Think of a real world example following
     * class A have 2 properties: one public, one private
     * interface IA has 2 function definitions
-    * class B implements A
-    * class C extends A
+    * class A implements IA
+    * class B extends A
     * Each class/interface should be on its own file and export/import them when needed

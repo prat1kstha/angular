@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\TS-Study\\index.ts",
+            "program": "${workspaceFolder}\\TS-Study\\Q2\\Car.ts",
             "preLaunchTask": "tsc: build - TS-Study/tsconfig.json",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"

@@ -1,7 +1,7 @@
 /* Interface */
 interface LivingThings {
     isHuman: boolean;
-    feed();
+    feed(): void;
 }
 
 const doSomething = () => {

@@ -1,5 +1,5 @@
 interface IVehicle {
-    getOperability(isElectric);
+    getOperability(isElectric: boolean): void;
 }
 
 export { IVehicle };

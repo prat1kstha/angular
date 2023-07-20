@@ -9,6 +9,12 @@ class Vehicle implements IVehicle {
         console.log(`Vehicle runs on ${this.isElectric ? "Electricity" : "Fuel"}`);
     }
 
+    constructor(noOfWheels: number, isElectric: boolean, engineNo: string) {
+        this.noOfWheels = noOfWheels;
+        this.isElectric = isElectric;
+        this.engineNo = engineNo;
+    }
+
 }
 
 export { Vehicle };

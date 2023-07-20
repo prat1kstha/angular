@@ -6,6 +6,7 @@ const livingthing_1 = require("./livingthing");
 class Animal {
     // Constructor
     constructor(t, b, l) {
+        this.isHuman = false;
         this.type = t;
         this.breed = b;
         this.legs = l;

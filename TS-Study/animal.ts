@@ -6,7 +6,7 @@ export class Animal implements LivingThings {
     private breed: string;
     protected type: string;
     legs: number;
-    isHuman: boolean;
+    isHuman: boolean = false;
 
     // Constructor
     constructor(t: string, b: string, l: number) {

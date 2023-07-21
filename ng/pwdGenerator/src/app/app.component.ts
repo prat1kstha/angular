@@ -6,11 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  appTitle: string = "Password Generator";
+
   length: number = 0;
   includeNumbers: boolean = false;
   includeLetters: boolean = false;
   includeSpecialChars: boolean = false;
-  password: string = "12ab!@";
+  password: string = "";
 
   changeUseNumbers() {
     this.includeNumbers = !this.includeNumbers;
@@ -28,11 +30,11 @@ export class AppComponent {
     this.length = len;
   }
 
-  generatePassword(length: number, useNumbers: boolean, useLetters: boolean, useSpecialChars: boolean) {
+  generatePassword() {
 
-    console.log(length, useNumbers, useLetters, useSpecialChars);
+    console.log(this.length, this.includeNumbers, this.includeLetters, this.includeSpecialChars);
     const numberSet: string = "0123456789"
-    const letterSet: string = "abcdefghijklmnopqrstuvwxyz"
+    const letterSet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     const specialCharSet: string = "!@#$%^&*()"
 
     let generatedPassword = "";
@@ -54,9 +56,10 @@ export class AppComponent {
     // }
 
     // Option2
-    let passwordSet: string = String.prototype.concat(useNumbers ? numberSet : "", useLetters ? letterSet : "", useSpecialChars ? specialCharSet : "");
+    let passwordSet: string = String.prototype.concat(this.includeNumbers ? numberSet : "", this.includeLetters ? letterSet : "", this.includeSpecialChars ? specialCharSet : "");
 
-    for (var i = 0; i < length; ++i) {
+    for (var i = 0; i < this.length; ++i) {
+      console.log(generatedPassword);
       generatedPassword += passwordSet.charAt(Math.floor(Math.random() * passwordSet.length));
     }
     this.password = generatedPassword;

@@ -1,0 +1,70 @@
+<div id="hamroform" class="columns p-5">
+
+  <div class="column is-6">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" (input)="name = $any($event).target.value" type="text">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Join Date</label>
+      <div class="control">
+        <input class="input" (input)="joinDate = $any($event).target.value" type="date">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Salary</label>
+      <div class="control">
+        <input class="input" (input)="salary = $any($event).target.value" type="number">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Height (cm)</label>
+      <div class="control">
+        <input class="input" (input)="height = $any($event).target.value" type="number">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="column is-6">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <label>{{name | titlecase}}</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Join Date</label>
+      <div class="control">
+        <label>{{joinDate | date: 'MMMM d, y'}}</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Salary</label>
+      <div class="control">
+        <label>{{salary | currency:'NPR':'symbol-narrow':'.0-2'}}</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Height (cm)</label>
+      <div class="control">
+        <label>{{height | number:'.0-2'}}</label>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -5,9 +5,7 @@
         </p>
     </div>
 </section>
-<div class="columns is-multiline m-6">
-    <div *ngFor="let card of cards" class="column is-3">
-        <app-card [title]="card.title" [subtitle]="card.subtitle" [imageUrl]="card.imageUrl"
-            [description]="card.description"></app-card>
-    </div>
+<div class="cardList">
+    <app-card class="" *ngFor="let card of cards" [title]="card.title" [subtitle]="card.subtitle"
+        [imageUrl]="card.imageUrl" [description]="card.description"></app-card>
 </div>

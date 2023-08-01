@@ -55,7 +55,9 @@
   </ul>
 </div>
 
-<router-outlet></router-outlet>
 <app-voting></app-voting>
+<router-outlet></router-outlet>
 
+<button (click)="getData()">Get Dog</button>
+<img *ngIf="data" src="{{data.message}}" width="400" />
 <!-- <footer>Footer goes here</footer> -->

@@ -7,6 +7,7 @@ import { HiringModule } from './hiring/hiring.module';
 import { FinanceModule } from './finance/finance.module';
 import { VoterComponent } from './voter/voter.component';
 import { VotingComponent } from './voting/voting.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,9 @@ import { VotingComponent } from './voting/voting.component';
   // Eager Loading
   imports: [
     BrowserModule,
+    HttpClientModule,
     HiringModule,
     FinanceModule,
-    VoterComponent,
-    VotingComponent,
     AppRoutingModule
   ],
   providers: [],

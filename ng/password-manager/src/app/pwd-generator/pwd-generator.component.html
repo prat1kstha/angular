@@ -1,0 +1,36 @@
+<button (click)="openPwdGenerator()" class="button is-primary is-small modal-button" data-target="modal"
+    aria-haspopup="true">Generate</button>
+
+
+<div class="modal" id="pwd-gen">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">New Password</p>
+            <button class="delete" (click)="closePwdGenerator()" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <label for="length" class="">Enter Length</label>
+            <input (input)="onChangeLength($any($event).target?.value)" class="input is-primary" type="number"
+                id="length" placeholder="">
+            <div class="">
+                <input (change)="changeUseNumbers()" type="checkbox" id="numbers" />
+                <label for="numbers" class="">Use Numbers</label>
+            </div>
+            <div class="">
+                <input (change)="changeUseLetters()" type="checkbox" id="letters" />
+                <label for="letters" class="">Use Letters</label>
+            </div>
+            <div class="">
+                <input (change)="changeUseSpecialChars()" type="checkbox" id="specialChars" />
+                <label for="specialChars" class="">Use Special Characters</label>
+            </div>
+
+        </section>
+        <footer class="modal-card-foot">
+            <button (click)="generatePassword()" class="button is-primary"
+                [disabled]="!(length && (includeLetters || includeNumbers || includeSpecialChars))">Generate</button>
+            <p class="input ml-2" *ngIf="password.length>0" disabled> {{password}}</p>
+        </footer>
+    </div>
+</div>

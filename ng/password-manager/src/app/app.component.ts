@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { PwdGeneratorComponent } from './pwd-generator/pwd-generator.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
 
   title = 'password-manager';
 
+  @Input() pwd: string = "";
   credList: any[] = [];
 
   passwordForm = this.formBuilder.group({
@@ -30,5 +32,13 @@ export class AppComponent {
     this.credList.forEach(element => {
       console.log(element);
     });
+  }
+
+  onPasswordGenerated(password: string) {
+    (<HTMLInputElement>document.querySelector('#password')).value = password;
+  }
+
+  openPwdGenerator() {
+    document.querySelector('#pwd-gen')?.classList.add('is-active');
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pwd-generator',
@@ -10,7 +10,9 @@ export class PwdGeneratorComponent {
   includeNumbers: boolean = false;
   includeLetters: boolean = false;
   includeSpecialChars: boolean = false;
-  password: string = "";
+
+  @Output() pwdGenerateEvent: EventEmitter<string> = new EventEmitter<string>();
+
 
   changeUseNumbers() {
     this.includeNumbers = !this.includeNumbers;
@@ -29,7 +31,6 @@ export class PwdGeneratorComponent {
   }
 
   generatePassword() {
-
     console.log(this.length, this.includeNumbers, this.includeLetters, this.includeSpecialChars);
     const numberSet: string = "0123456789"
     const letterSet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -40,14 +41,11 @@ export class PwdGeneratorComponent {
     let passwordSet: string = String.prototype.concat(this.includeNumbers ? numberSet : "", this.includeLetters ? letterSet : "", this.includeSpecialChars ? specialCharSet : "");
 
     for (var i = 0; i < this.length; ++i) {
-      console.log(generatedPassword);
       generatedPassword += passwordSet.charAt(Math.floor(Math.random() * passwordSet.length));
     }
-    this.password = generatedPassword;
-  }
-
-  openPwdGenerator() {
-    document.querySelector('#pwd-gen')?.classList.add('is-active');
+    console.log(generatedPassword);
+    this.pwdGenerateEvent.emit(generatedPassword);
+    this.closePwdGenerator();
   }
 
   closePwdGenerator() {

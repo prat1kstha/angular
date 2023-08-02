@@ -1,0 +1,28 @@
+.form {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+    color: #4a4a4a;
+    display: block;
+    padding: 0rem;
+}
+
+.form-header {
+    align-items: center;
+    background-color: #e2e2e2;
+    border-radius: 4px 4px 0 0;
+    color: #000000;
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    line-height: 1.25;
+    padding: 0.75em 1em;
+    position: relative;
+}
+
+.form-body {
+    background-color: white;
+    color: #4a4a4a;
+    display: block;
+    padding: 1.25rem;
+  }

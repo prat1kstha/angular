@@ -1,18 +1,11 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="#">
       <i class="fas fa-key"></i>
     </a>
-
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
         Password Manager
@@ -34,4 +27,47 @@
   </div>
 </nav>
 
-<app-pwd-generator></app-pwd-generator>
+<div class="columns">
+  <div class="column m-5 is-4">
+    <form class="form m-2" [formGroup]="passwordForm" (ngSubmit)="onSubmit()">
+      <header class="form-header">
+        Add New Password
+      </header>
+      <div class="form-body">
+        <div class="field">
+          <label class="label">Domain</label>
+          <div class="control">
+            <input class="input" id="domain" type="email" placeholder="Website" formControlName="domain">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" id="username" type="text" placeholder="Username" formControlName="username">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input class="input" id="password" type="text" placeholder="Your Password" formControlName="password">
+            </div>
+            <div class="control">
+              <app-pwd-generator></app-pwd-generator>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Expires</label>
+          <div class="control">
+            <input class="input" id="expiry-date" type="date" placeholder="" formControlName="expiryDate">
+          </div>
+        </div>
+        <button class="button is-primary" type="submit">Save Password</button>
+      </div>
+    </form>
+  </div>
+  <div class="column m-5 is-8">
+    <app-pwd-store></app-pwd-store>
+  </div>
+</div>

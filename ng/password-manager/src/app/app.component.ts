@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injectable, Input, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { PwdGeneratorComponent } from './pwd-generator/pwd-generator.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent {
   title = 'password-manager';
 
   @Input() pwd: string = "";
-  credList: any[] = [];
+  @Output() credentials: any[] = [];
 
   passwordForm = this.formBuilder.group({
     domain: "",
@@ -25,13 +24,8 @@ export class AppComponent {
   })
 
   onSubmit(): void {
-    console.log('Password added', this.passwordForm.value);
-    this.credList.push(this.passwordForm.value);
+    this.credentials.push(this.passwordForm.value);
     this.passwordForm.reset();
-
-    this.credList.forEach(element => {
-      console.log(element);
-    });
   }
 
   onPasswordGenerated(password: string) {
@@ -40,5 +34,9 @@ export class AppComponent {
 
   openPwdGenerator() {
     document.querySelector('#pwd-gen')?.classList.add('is-active');
+  }
+
+  removePassword(i: number) {
+    this.credentials.splice(i);
   }
 }

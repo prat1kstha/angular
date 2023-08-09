@@ -9,12 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let credential of credentials">
             <td><button class="delete"></button></td>
-            <td>pratik.shrestha@gmail.com</td>
-            <td>pratik shrestha</td>
-            <td>abcdefgh</td>
-            <td>5 days</td>
+            <td> {{credential.domain}}</td>
+            <td> {{credential.username}}</td>
+            <td> {{credential.password}}</td>
+            <td> {{credential.expiryDate}}</td>
         </tr>
     </tbody>
 </table>

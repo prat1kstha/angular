@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable, Input } from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './pwd-store.component.html',
   styleUrls: ['./pwd-store.component.css']
 })
+@Injectable({ providedIn: 'root' })
 export class PwdStoreComponent {
-  // credList: Password[] = [];
-
-
-  removePassword(i: number) {
-    // this.pwdList.splice(i);
-  }
+  @Input() credentials: any[] = [];
 }
